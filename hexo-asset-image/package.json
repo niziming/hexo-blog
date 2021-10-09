@@ -1,5 +1,5 @@
 {
-  "_from": "git+https://github.com/xcodebuild/hexo-asset-image.git",
+  "_from": "git+https://github.com/CodeFalling/hexo-asset-image.git",
   "_id": "hexo-asset-image@0.0.5",
   "_inBundle": false,
   "_integrity": "",
@@ -15,21 +15,19 @@
   },
   "_requested": {
     "type": "git",
-    "raw": "hexo-asset-image@git+https://github.com/xcodebuild/hexo-asset-image.git",
-    "name": "hexo-asset-image",
-    "escapedName": "hexo-asset-image",
-    "rawSpec": "git+https://github.com/xcodebuild/hexo-asset-image.git",
-    "saveSpec": "git+https://github.com/xcodebuild/hexo-asset-image.git",
-    "fetchSpec": "https://github.com/xcodebuild/hexo-asset-image.git",
+    "raw": "https://github.com/CodeFalling/hexo-asset-image",
+    "rawSpec": "https://github.com/CodeFalling/hexo-asset-image",
+    "saveSpec": "git+https://github.com/CodeFalling/hexo-asset-image.git",
+    "fetchSpec": "https://github.com/CodeFalling/hexo-asset-image.git",
     "gitCommittish": null
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "git+https://github.com/xcodebuild/hexo-asset-image.git#3c114cf0c0343ab28469635085b225fcae7fb9d3",
-  "_spec": "hexo-asset-image@git+https://github.com/xcodebuild/hexo-asset-image.git",
-  "_where": "D:\\deployment\\IdeaProjects\\hexo-blog\\source\\_posts",
+  "_resolved": "git+https://github.com/CodeFalling/hexo-asset-image.git#3c114cf0c0343ab28469635085b225fcae7fb9d3",
+  "_spec": "https://github.com/CodeFalling/hexo-asset-image",
+  "_where": "D:\\jermaine\\IdeaProjects\\hexo-blog",
   "author": {
     "name": "xcodebuild"
   },
