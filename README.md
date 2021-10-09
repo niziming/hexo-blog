@@ -64,6 +64,8 @@ hexo deploy # 部署在远端
 
 不然部署静态路径时会报错
 
+### 第一种方式
+
 ~~~
 设置post_asset_folder  为 true, 安装插件 asset-image
 npm install https://github.com/CodeFalling/hexo-asset-image
@@ -74,6 +76,10 @@ hexo clean && hexo generate && hexo s 运行查看
 ~~~
 
 备注: 因为国内环境github拉取会非常慢, 我将hexo-asset-image作为资源文件上传到项目根目录下,方便你们复制进node_modules中
+
+### 第二种方式
+
+将根目录/下的hexo-asset-image.7z 解压后放进node_modules中即可
 
 ## **来作者**README文档如下
 
