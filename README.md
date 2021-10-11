@@ -81,6 +81,29 @@ hexo clean && hexo generate && hexo s 运行查看
 
 将根目录/下的hexo-asset-image.7z 解压后放进node_modules中即可
 
+
+
+### 博客目录点击无跳转问题
+
+![image-20211011145013522](README/image-20211011145013522.png)
+
+点击后无效发现![image-20211011145028660](README/image-20211011145028660.png)跳转为null
+
+HEXO搭建博客，发现文章目录点击无反应，F12查看html，发现`toc-link`后面没有href属性
+
+解决 : 
+
+因此目前阶段，进入你项目根目录的 `node_modules\hexo-toc\lib\filter.js` 中，把 28 行～31 行修改为
+
+~~~js
+    $title.attr('id', id);
+    // $title.children('a').remove();
+    // $title.html( '<span id="' + id + '">' + $title.html() + '</span>' );
+    // $title.removeAttr('id');
+~~~
+
+重启后既可跳转
+
 ## **来作者**README文档如下
 
 > Ported Theme of [Hux Blog](https://github.com/Huxpro/huxpro.github.io), Thank [Huxpro](https://github.com/Huxpro) for designing such a flawless theme.
