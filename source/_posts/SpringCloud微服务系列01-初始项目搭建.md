@@ -74,6 +74,10 @@ Spring Cloud 为开发者提供了快速构建分布式系统中一些常见模�
 </project>
 ~~~
 
+#### 整体项目架构图
+
+![image-20211011170834786](SpringCloud微服务系列01-初始项目搭建/image-20211011170834786.png)
+
 ## 创建两个子项目
 
 ![image-20211011143703978](SpringCloud微服务系列01-初始项目搭建/image-20211011143703978.png)
@@ -82,120 +86,7 @@ Spring Cloud 为开发者提供了快速构建分布式系统中一些常见模�
 
 > 里面包含一些工具类, 持久类框架, ws 服务等
 
-#### 公共工具类
-
-![image-20211011134548437](SpringCloud微服务系列01-初始项目搭建/image-20211011134548437.png)
-
-
-
-![image-20211011143316557](SpringCloud微服务系列01-初始项目搭建/image-20211011143316557.png)
-
-~~~xml
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <artifactId>Global-Utils</artifactId>
-        <groupId>cn.zm</groupId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
-    <modelVersion>4.0.0</modelVersion>
-
-    <artifactId>common</artifactId>
-
-    <description>公共工具模块</description>
-
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-        <!--<mysql.version>8.0.22</mysql.version>-->
-        <!--<commons-lang3.version>3.10</commons-lang3.version>-->
-        <druid.version>1.1.22</druid.version>
-        <!--<lombok.version>1.18.16</lombok.version>-->
-        <hutool.version>5.3.10</hutool.version>
-        <knife4j.version>2.0.7</knife4j.version>
-        <fastjson.version>1.2.58</fastjson.version>
-    </properties>
-
-    <dependencies>
-        <!-- mysql-connector -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <!--<version>${mysql.version}</version>-->
-            <exclusions>
-                <exclusion>
-                    <groupId>com.google.protobuf</groupId>
-                    <artifactId>protobuf-java</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <!--druid线程池-->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid-spring-boot-starter</artifactId>
-            <version>${druid.version}</version>
-        </dependency>
-
-        <!--lombok-->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <!--<version>${lombok.version}</version>-->
-            <!--<scope>compile</scope>-->
-        </dependency>
-
-        <!-- commons-lang3 -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <!--<version>${commons-lang3.version}</version>-->
-        </dependency>
-
-        <!-- web -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <!-- fastjson -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>${fastjson.version}</version>
-        </dependency>
-
-        <!-- knife4j -->
-        <dependency>
-            <groupId>com.github.xiaoymin</groupId>
-            <artifactId>knife4j-micro-spring-boot-starter</artifactId>
-            <version>${knife4j.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.xiaoymin</groupId>
-            <artifactId>knife4j-spring-boot-starter</artifactId>
-            <version>${knife4j.version}</version>
-        </dependency>
-
-        <!-- hutool 工具 -->
-        <dependency>
-            <groupId>cn.hutool</groupId>
-            <artifactId>hutool-all</artifactId>
-            <version>${hutool.version}</version>
-        </dependency>
-
-        <!-- aop -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-aop</artifactId>
-        </dependency>
-    </dependencies>
-
-</project>
-~~~
-
+![image-20211011170852113](SpringCloud微服务系列01-初始项目搭建/image-20211011170852113.png)
 
 
 ### 微服务架构项目
@@ -236,4 +127,16 @@ Spring Cloud 为开发者提供了快速构建分布式系统中一些常见模�
 
 > 被项目目前进行Netflix架构流程, 仅需要追加一下图片模块的内容就行
 
+### Netflix架构模块
+
 ![image-20211011144210468](SpringCloud微服务系列01-初始项目搭建/image-20211011144210468.png)
+
+### Spring-Cloud-Alibaba架构
+
+![image-20211011170108359](SpringCloud微服务系列01-初始项目搭建/image-20211011170108359.png)
+
+#### Dubbo-Zookeeper架构
+
+![image-20211011170129586](SpringCloud微服务系列01-初始项目搭建/image-20211011170129586.png)
+
+后续文章会详细讲解Netfli架构模式下的微服务
