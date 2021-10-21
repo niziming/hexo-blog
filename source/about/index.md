@@ -14,7 +14,7 @@ fixed: false
 
 ### 关于我
 
-> 两只猫的铲屎官！
+> 一只黑猫的铲屎官！
 
 ### 兴趣方向
 
@@ -31,5 +31,5 @@ fixed: false
 
 ### 联系我
 
->Email: zimingnee@163.com
+>Email: jermainenee@yeah.net
 
