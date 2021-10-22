@@ -7,12 +7,12 @@ title: 倪子铭
 subtitle: 个人博客
 author: 倪子铭
 language: zn_ch
-timezone:
+timezone: 
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 #url: http://yoursite-url       # Note: don't forget to modify the CNAME file to your url
-url: http://www.niziming.tk/      # Note: don't forget to modify the CNAME file to your url
+url: https://niziming.github.io      # Note: don't forget to modify the CNAME file to your url
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:

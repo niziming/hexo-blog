@@ -36,7 +36,7 @@ SSR 已经停止更新一段时间了. 相关应该开源已久 GFW团队 也可
 
 
 
-#### 下载Brook
+### 下载Brook
 
 命令: `$ curl -L https://github.com/txthinking/brook/releases/download/v20200909/brook_linux_amd64 -o /usr/bin/brook $ chmod +x /usr/bin/brook`
 
@@ -51,7 +51,7 @@ in/brook
 
 ```
 
-#### 安装 nami
+### 安装 nami
 
 应该是一个包管理器, 官方推荐使用nami安装
 
@@ -86,7 +86,7 @@ zsh: command not found: nami
 
 ```
 
-#### 安装brook
+### 安装brook
 
 命令: `$ nami install github.com/txthinking/brook`
 
@@ -127,7 +127,7 @@ zsh: command not found: nami
 
 这里一旦关掉terminal的话brook服务就会停止, 所以按照官方文档开启守护进程
 
-#### 安装joker 开启守护进程
+### 安装joker 开启守护进程
 
 
 
@@ -142,7 +142,7 @@ zsh: command not found: nami
 
 ```
 
-#### 配置brook
+### 配置brook
 
 ```
 ☁  jermainenee  joker brook server -l :8004 -p ziming
@@ -168,13 +168,13 @@ Stopping ShadowsocksR success
 [Info] ShadowsocksR uninstall success
 ```
 
-#### windows client Brook客户端下载
+### windows client Brook客户端下载
 
 > 下载地址
 >
 > https://github.com/txthinking/brook/releases
 
-#### IOS 移动端 下载
+### IOS 移动端 下载
 
 > https://apps.apple.com/us/app/brook-undetectable-proxy-vpn/id1216002642
 
@@ -182,7 +182,7 @@ Stopping ShadowsocksR success
 
 ![](Brook科学上网必备/IMG_4987.PNG)
 
-#### 总结
+### 总结
 
 brook 的配置十分简单, 使用起来比ssr服务还要简单.
 
