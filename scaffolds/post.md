@@ -1,8 +1,28 @@
 ---
 title: {{ title }}
-subtitle:
+subtitle: {{ title }}
 date: {{ date }}
 catalog: true
 header-img:
-tags:
+tags: []
 ---
+
+# title
+
+
+
+## 简介
+
+
+
+## 准备工作
+
+
+
+
+
+## 引用资料
+
+>
+>
+>

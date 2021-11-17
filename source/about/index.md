@@ -25,7 +25,7 @@ fixed: false
 
 ### 参与社区
 
- > Github:https://github.com/倪子铭
+ > Github:https://github.com/niziming
  >
  > 豆瓣:https://www.douban.com/people/80901919/
 
