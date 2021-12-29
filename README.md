@@ -34,7 +34,47 @@ npm install hexo-cli -g
 ~~~
 如果下载速度慢的可以将npm的下载源换成国内镜像,推荐阿里巴巴的镜像.
 
+```
+// 安装cnpm并换源阿里巴巴
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+// npm换源阿里巴巴
+npm config set registry https://registry.npm.taobao.org
+
+// 配置后可通过下面方式来验证是否成功
+npm config get registry
+// 或
+npm info express
+```
+
+版本信息
+
+~~~
+Jermaine@R7000K MINGW64 /d/Development/IdeaProjects/hexo-blog (master)
+$ hexo -v
+hexo: 3.9.0
+hexo-cli: 4.3.0
+os: win32 10.0.19042
+node: 12.2.0
+v8: 7.4.288.21-node.17
+uv: 1.28.0
+zlib: 1.2.11
+brotli: 1.0.7
+ares: 1.15.0
+modules: 72
+nghttp2: 1.38.0
+napi: 4
+llhttp: 1.1.3
+http_parser: 2.8.0
+openssl: 1.1.1b
+cldr: 35.1
+icu: 64.2
+tz: 2019a
+unicode: 12.1
+
+~~~
+
 ## 使用博客模板
+
 ### 初始化
 ~~~ git 
 git clone 链接
@@ -67,7 +107,7 @@ hexo deploy # 部署在远端
 ### 第一种方式
 
 ~~~
-设置post_asset_folder  为 true, 安装插件 asset-image
+设置 post_asset_folder  为 true, 安装插件 asset-image
 npm install https://github.com/CodeFalling/hexo-asset-image
 或者
 npm install https://github.com/xcodebuild/hexo-asset-image
