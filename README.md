@@ -144,6 +144,14 @@ HEXO搭建博客，发现文章目录点击无反应，F12查看html，发现`to
 
 重启后既可跳转
 
+### git ssh key 生成
+
+~~~
+ssh-keygen -t rsa -C "jermainenee@yeah.net"
+~~~
+
+
+
 ## **来作者**README文档如下
 
 > Ported Theme of [Hux Blog](https://github.com/Huxpro/huxpro.github.io), Thank [Huxpro](https://github.com/Huxpro) for designing such a flawless theme.
