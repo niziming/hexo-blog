@@ -2,7 +2,7 @@
 title: PEV7.2_all_in_one_虚拟机大全_01_pve的下载与安装
 subtitle: pve的下载与安装
 catalog: true
-tags: [pve]
+tags: [PVE]
 date: 2023-04-01 23:44:12
 header-img:
 ---

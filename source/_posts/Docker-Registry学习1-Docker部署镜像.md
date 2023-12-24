@@ -1,7 +1,7 @@
 ---
 title: Docker-Registry学习1-Docker部署镜像
 catalog: true
-tags: []
+tags: [Docker]
 date: 2019-10-27 11:41:33
 subtitle:
 header-img:

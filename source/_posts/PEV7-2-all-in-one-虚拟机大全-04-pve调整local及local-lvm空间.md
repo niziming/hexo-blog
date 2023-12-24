@@ -2,7 +2,7 @@
 title: PEV7.2_all_in_one_虚拟机大全_04_pve调整local及local-lvm空间
 subtitle: PEV7.2_all_in_one_虚拟机大全_04_pve调整local及local-lvm空间
 catalog: true
-tags: []
+tags: [PVE]
 date: 2023-04-02 09:59:02
 header-img:
 ---

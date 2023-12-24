@@ -2,7 +2,7 @@
 title: PEV7.2_all_in_one_虚拟机大全_05_pve虚拟机直通硬件
 subtitle: PEV7.2_all_in_one_虚拟机大全_05_pve虚拟机直通硬件
 catalog: true
-tags: []
+tags: [PVE]
 date: 2023-04-02 12:56:31
 header-img:
 ---
