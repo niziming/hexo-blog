@@ -1,1 +1,1 @@
-hexo clean && hexo g && hexo d
+hexo clean && hexo g && hexo d && git add . && git push
