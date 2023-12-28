@@ -1,7 +1,7 @@
 ---
 title: Docker-Registry学习3-配置WebUI与客户端
 catalog: true
-tags: []
+tags: [Docker]
 date: 2019-10-27 11:49:21
 subtitle:
 header-img:

@@ -2,7 +2,7 @@
 title: PEV7.2_all_in_one_虚拟机大全_02_pve安装windows10镜像
 subtitle: PEV7.2_all_in_one_虚拟机大全_02_pve安装windows10镜像
 catalog: true
-tags: []
+tags: [PVE]
 date: 2023-04-02 09:31:30
 header-img:
 ---

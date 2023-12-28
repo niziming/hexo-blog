@@ -1,7 +1,7 @@
 ---
 title: Docker-Registry学习2-简介与安装
 catalog: true
-tags: []
+tags: [Docker]
 date: 2019-10-27 10:20:36
 subtitle:
 header-img:
