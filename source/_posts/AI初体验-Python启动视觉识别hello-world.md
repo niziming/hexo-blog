@@ -163,7 +163,99 @@ Process finished with exit code 1
 
 
 
+### 运行结果
 
+~~~
+"D:\Program Files\Python39\python.exe" E:\PycharmProjects\Python-Learing\src\DiscriminateNumber.py 
+2024-04-29 09:18:43.679530: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudnn64_8.dll'; dlerror: cudnn64_8.dll not found
+2024-04-29 09:18:43.679746: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1850] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2024-04-29 09:18:43.680698: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Epoch 1/5
+1875/1875 [==============================] - 3s 2ms/step - loss: 0.2950 - accuracy: 0.9139
+Epoch 2/5
+1875/1875 [==============================] - 3s 2ms/step - loss: 0.1440 - accuracy: 0.9578
+Epoch 3/5
+1875/1875 [==============================] - 3s 2ms/step - loss: 0.1072 - accuracy: 0.9677
+Epoch 4/5
+1875/1875 [==============================] - 2s 910us/step - loss: 0.0871 - accuracy: 0.9734
+Epoch 5/5
+1875/1875 [==============================] - 1s 742us/step - loss: 0.0765 - accuracy: 0.9762
+313/313 [==============================] - 0s 781us/step - loss: 0.0723 - accuracy: 0.9795
+Test Loss: 0.07231290638446808
+Test Accuracy: 0.9794999957084656
+
+Process finished with exit code 0
+
+~~~
+
+没有使用显卡
+
+![image-20240429092110138](AI初体验-Python启动视觉识别hello-world/image-20240429092110138-1714353671179-1.png)
+
+#### 原因 
+
+1. 缺少 cudnn64_8.dll：这个警告是因为缺少了 cuDNN 库文件。cuDNN 是用于加速深度神经网络计算的 NVIDIA 库。如果你希望在 GPU 上运行 TensorFlow，并且获得最佳性能，你需要安装并配置 cuDNN。你可以按照 TensorFlow 官方文档提供的指南进行安装和配置：[在 GPU 上安装 TensorFlow](https://www.tensorflow.org/install/gpu)。
+2. GPU 设备注册跳过：由于缺少 GPU 库文件，TensorFlow 未能注册 GPU 设备。
+3. 优化的 TensorFlow 二进制文件：这个消息说明你的 TensorFlow 二进制文件使用了 oneAPI Deep Neural Network Library (oneDNN) 来优化 CPU 上的性能。
+
+#### 解决
+
+1. **下载 cuDNN**：
+
+   - 访问 NVIDIA 的[官方网站](https://developer.nvidia.com/cudnn)并注册（如果尚未注册），然后下载适用于你的系统的 cuDNN。确保选择与你安装的 CUDA 版本兼容的 cuDNN 版本。[cuDNN 9.1.0 Downloads | NVIDIA Developer](https://developer.nvidia.com/cudnn-downloads?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exe_local)
+   - ![image-20240429092243209](AI初体验-Python启动视觉识别hello-world/image-20240429092243209.png)
+
+2. **安装 cuDNN**：![image-20240429091349891](AI初体验-Python启动视觉识别hello-world/image-20240429091349891.png)
+
+   - 解压下载的 cuDNN 压缩文件，并按照 NVIDIA 的安装说明进行安装。[Index of /compute/cudnn/redist/cudnn/windows-x86_64 (nvidia.com)](https://developer.download.nvidia.com/compute/cudnn/redist/cudnn/windows-x86_64/)
+   - [1. Introduction — Installation Guide Windows 12.4 documentation (nvidia.com)](https://docs.nvidia.com/cuda/cuda-installation-guide-microsoft-windows/index.html)
+   - [Installing cuDNN on Windows — NVIDIA cuDNN v9.1.0 documentation](https://docs.nvidia.com/deeplearning/cudnn/latest/installation/windows.html)
+   - ![image-20240429092428567](AI初体验-Python启动视觉识别hello-world/image-20240429092428567.png)
+   - 我的cuda版本是![image-20240429092501185](AI初体验-Python启动视觉识别hello-world/image-20240429092501185.png)
+
+3. **NVIDIA官方操作**：![image-20240429092558902](AI初体验-Python启动视觉识别hello-world/image-20240429092558902.png)
+
+4. ![image-20240429092735965](AI初体验-Python启动视觉识别hello-world/image-20240429092735965.png)
+
+   
+
+5. **重新运行代码**：everything查找缺失的文件已找到
+
+   ![image-20240429092822579](AI初体验-Python启动视觉识别hello-world/image-20240429092822579.png)
+
+6. 
+
+   - 完成以上步骤后，重新运行你的代码，你应该不会再收到缺少 cudnn64_8.dll 的错误。
+
+   ~~~
+   "D:\Program Files\Python39\python.exe" E:\PycharmProjects\Python-Learing\src\DiscriminateNumber.py 
+   2024-04-29 09:28:31.471368: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+   To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+   2024-04-29 09:28:31.848419: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 5480 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3060 Ti, pci bus id: 0000:01:00.0, compute capability: 8.6
+   Epoch 1/5
+   2024-04-29 09:28:33.321392: I tensorflow/stream_executor/cuda/cuda_blas.cc:1774] TensorFloat-32 will be used for the matrix multiplication. This will only be logged once.
+   1875/1875 [==============================] - 4s 1ms/step - loss: 0.2982 - accuracy: 0.9136
+   Epoch 2/5
+   1875/1875 [==============================] - 2s 1ms/step - loss: 0.1459 - accuracy: 0.9565
+   Epoch 3/5
+   1875/1875 [==============================] - 3s 2ms/step - loss: 0.1081 - accuracy: 0.9668
+   Epoch 4/5
+   1875/1875 [==============================] - 3s 1ms/step - loss: 0.0886 - accuracy: 0.9728
+   Epoch 5/5
+   1875/1875 [==============================] - 3s 1ms/step - loss: 0.0745 - accuracy: 0.9764
+   313/313 [==============================] - 0s 1ms/step - loss: 0.0735 - accuracy: 0.9779
+   Test Loss: 0.07349233329296112
+   Test Accuracy: 0.9779000282287598
+   
+   Process finished with exit code 0
+   
+   ~~~
+
+   成功解决了缺少 cuDNN 的问题，并且你的代码在 GPU 上成功运行，并且在 MNIST 数据集上获得了相当不错的准确率（约为 97.8%）。
+
+   现在TensorFlow 已经配置好了 GPU 支持，并且在 GPU 上运行 TensorFlow 时能够获得更好的性能。
 
 ### 廖雪峰版本demo
 
@@ -295,5 +387,7 @@ class NeuralNetwork(nn.Module):
 >
 >https://www.liaoxuefeng.com/article/1543329456062498#0
 >
+>[cuDNN 9.1.0 Downloads | NVIDIA Developer](https://developer.nvidia.com/cudnn-downloads?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exe_local)
 >
+>[Installing cuDNN on Windows — NVIDIA cuDNN v9.1.0 documentation](https://docs.nvidia.com/deeplearning/cudnn/latest/installation/windows.html)
 
