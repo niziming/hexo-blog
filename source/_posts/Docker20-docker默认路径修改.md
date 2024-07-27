@@ -23,21 +23,21 @@ sudo docker ps -a -q | xargs -r sudo docker rm
 ### 2. 删除所有镜像
 
 ```
-bashCopy code# 删除所有镜像
+# 删除所有镜像
 sudo docker images -q | xargs -r sudo docker rmi -f
 ```
 
 ### 3. 删除所有卷
 
 ```
-bashCopy code# 删除所有卷
+# 删除所有卷
 sudo docker volume ls -q | xargs -r sudo docker volume rm
 ```
 
 ### 4. 删除所有网络
 
 ```
-bashCopy code# 删除所有网络（保留默认网络）
+# 删除所有网络（保留默认网络）
 sudo docker network ls | grep -v "bridge\|host\|none" | awk '{if (NR!=1) print $1}' | xargs -r sudo docker network rm
 ```
 
