@@ -152,6 +152,10 @@ ssh-keygen -t rsa -C "jermainenee@yeah.net"
 
 
 
+## markdown配置
+
+![QQ截图20230520204759](README/QQ截图20230520204759.png)
+
 ## **来作者**README文档如下
 
 > Ported Theme of [Hux Blog](https://github.com/Huxpro/huxpro.github.io), Thank [Huxpro](https://github.com/Huxpro) for designing such a flawless theme.
