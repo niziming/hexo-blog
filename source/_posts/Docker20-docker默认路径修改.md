@@ -8,31 +8,88 @@ header-img:
 ---
 
 # docker 默认路径
-Docker 默认使用以下路径来存储不同类型的数据：
+### 1. 停止并删除所有容器
 
-1. 镜像存储位置：`/var/lib/docker/image`
-2. 容器存储位置：`/var/lib/docker/containers/<container-id>/`
-3. 卷存储位置：`/var/lib/docker/volumes/`
-4. 配置文件位置：`/etc/docker/daemon.json`
+```
+# 停止所有容器
+sudo docker ps -a -q | xargs -r sudo docker stop
 
-如果需要修改这些默认路径，可以在启动 Docker 服务时通过命令行参数指定新的路径。例如，如果想要将 Docker 的数据存储到不同的分区或磁盘，可以修改 Docker 的服务文件，在启动参数中添加 `-g` 或 `--data-root` 选项来指定新的存储路径。
+# 删除所有容器
+sudo docker ps -a -q | xargs -r sudo docker rm
+```
 
-例如，要将 Docker 的数据存储路径改为 `/new/path/to/docker-data`，可以按照以下步骤操作：
+`-r`选项确保`xargs`只在有输入时执行命令。
 
-1. 停止 Docker 服务：
+### 2. 删除所有镜像
 
-   `sudo systemctl stop docker`
+```
+bashCopy code# 删除所有镜像
+sudo docker images -q | xargs -r sudo docker rmi -f
+```
 
-   
+### 3. 删除所有卷
 
-2. 编辑 Docker 服务文件（例如 `/etc/systemd/system/docker.service`），在 `ExecStart` 参数中添加 `-g` 或 `--data-root` 选项：
+```
+bashCopy code# 删除所有卷
+sudo docker volume ls -q | xargs -r sudo docker volume rm
+```
 
-   `ExecStart=/usr/bin/dockerd -g /new/path/to/docker-data --containerd=/run/containerd/containerd.sock`
+### 4. 删除所有网络
 
-   
+```
+bashCopy code# 删除所有网络（保留默认网络）
+sudo docker network ls | grep -v "bridge\|host\|none" | awk '{if (NR!=1) print $1}' | xargs -r sudo docker network rm
+```
 
-3. 重新加载服务配置并启动 Docker 服务：
+### 5. 卸载Docker软件包
 
-   `sudo systemctl daemon-reloadsudo systemctl start docker`
+根据你的Linux发行版，使用适当的包管理器命令卸载Docker：
 
-   
+#### 对于基于Debian的系统（如Ubuntu）：
+
+```
+sudo apt-get purge -y docker-engine docker docker.io docker-ce docker-ce-cli
+sudo apt-get autoremove -y --purge docker-engine docker docker.io docker-ce
+```
+
+#### 对于基于Red Hat的系统（如CentOS）：
+
+```
+bash
+Copy code
+sudo yum remove docker-ce docker-ce-cli containerd.io
+```
+
+#### 对于基于Fedora的系统：
+
+```
+
+sudo dnf remove docker-ce docker-ce-cli containerd.io
+```
+
+### 6. 删除Docker相关数据和配置文件
+
+```
+sudo rm -rf /var/lib/docker
+sudo rm -rf /etc/docker
+```
+
+通过这些步骤，你应该能够完全卸载Docker。
+
+
+
+### 安装Docker：
+
+```bashCopy code
+sudo apt-get update
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+```
+方法1：确保Docker守护进程已停止
+首先，确保Docker守护进程已完全停止：
+
+sudo systemctl stop docker
+sudo pkill -f dockerd
+
+sudo systemctl daemon-reload
+
+sudo systemctl start docker
