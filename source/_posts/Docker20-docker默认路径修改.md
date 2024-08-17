@@ -87,9 +87,14 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 方法1：确保Docker守护进程已停止
 首先，确保Docker守护进程已完全停止：
 
+~~~
 sudo systemctl stop docker
 sudo pkill -f dockerd
 
 sudo systemctl daemon-reload
 
 sudo systemctl start docker
+~~~
+
+
+
