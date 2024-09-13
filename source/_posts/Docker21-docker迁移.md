@@ -18,26 +18,33 @@ Docker 镜像迁移有几种方法，具体可以根据你的需求选择适合�
 1. 在源主机上，将镜像保存为一个 tar 文件：
 
    ```
-   
-   
    docker save -o <保存文件名>.tar <镜像名>:<标签>
    ```
 
    示例：
 
    ```
-   
-   
    docker save -o myimage.tar myimage:latest
    ```
 
 2. 将生成的 tar 文件传输到目标主机。可以使用 SCP、FTP 等工具进行传输。
 
+   1. 如果是wsl可以使用以下指令
+
+   ~~~
+   ➜  ~ docker save portainer:2.16.2 -o portainer.2.16.2.tar
+   ➜  ~ find portainer.2.16.2.tar
+   portainer.2.16.2.tar
+   ➜  ~ ls
+   get-docker.sh  portainer.2.16.2.tar  snap
+   ➜  ~ mv portainer.2.16.2.tar /mnt/d
+   ~~~
+
+   ![image-20240913101305265](Docker21-docker迁移/image-20240913101305265.png)
+
 3. 在目标主机上加载镜像：
 
    ```
-   
-   
    docker load -i <保存文件名>.tar
    ```
 
