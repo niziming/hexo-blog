@@ -3,12 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "3.9.0"
+    "version": "7.3.0"
   },
   "dependencies": {
+    "cheerio": "^1.1.0",
     "chokidar": "^3.5.1",
     "g": "^2.0.1",
-    "hexo": "^3.9.0",
+    "hexo": "^7.3.0",
     "hexo-asset-image": "https://github.com/CodeFalling/hexo-asset-image.git",
     "hexo-cli": "^4.3.0",
     "hexo-deployer-git": "^0.1.0",
