@@ -7,6 +7,26 @@ header-img:
 tags: [Hexo]
 ---
 
+> 2025-09-19: 修复hexo-toc插件目录链接无法跳转问题。通过修改node_modules\hexo-toc\lib\filter.js文件，注释掉会导致toc-link没有href属性的代码，解决目录点击无反应的问题。
+> 
+> 原始代码：
+> ```javascript
+> $title.attr('id', id);
+> $title.children('a').remove();
+> $title.html( '<span id="' + id + '">' + $title.html() + '</span>' );
+> $title.removeAttr('id');
+> ```
+> 
+> 修改后代码：
+> ```javascript
+> $title.attr('id', id);
+> // $title.children('a').remove();
+> // $title.html( '<span id="' + id + '">' + $title.html() + '</span>' );
+> // $title.removeAttr('id');
+> ```
+>
+> 2025-09-19: 添加不蒜子网站统计功能，在footer中显示站点总访问量、访客数和文章阅读量。
+
 ~~~
 title: "[Hexo] Theme HuWeihuang"
 catalog: true

@@ -7,7 +7,7 @@ header-img:
 tags: []
 ---
 
-# title
+{{ title }}
 
 
 
